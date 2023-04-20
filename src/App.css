@@ -61,6 +61,30 @@
 
 
 
+/* Global Spacers */
+.Spacer-4X {
+  display: flex;
+  height: 100px
+}
+
+.Spacer-3X {
+  display: flex;
+  height: 75px
+}
+
+.Spacer-2X {
+  display: flex;
+  height: 50px
+}
+
+.Spacer-1X {
+  display: flex;
+  height: 25px
+}
+
+
+
+
 /* Global Text Parameters */
 h1 {
   font-family: TitleBroadOutlineLarge;
@@ -74,12 +98,19 @@ h1 {
 
 h2 {
   font-family: Nov-Medium;
+  font-size: 26px;
   color: #FFFFFF;
   margin: 0;
 }
 
 h2.italic {
   font-family: Nov-MediumItalic;
+}
+
+h3 {
+  font-family: Nov-Medium;
+  color: #FFFFFF;
+  margin: 0;
 }
 
 p {
@@ -90,6 +121,10 @@ p {
 
 p.large {
   font-size: 20px;
+}
+
+p.italic {
+  font-family: Nov-SemiLightItalic;
 }
 
 
