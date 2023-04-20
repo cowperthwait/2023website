@@ -1,5 +1,35 @@
+/* Site Fonts */
+@font-face {
+  font-family: "Nov-Medium";
+  src: url("./assets/fonts/Nov-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Nov-MediumItalic";
+  src: url("./assets/fonts/Nov-MediumItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Nov-Regular";
+  src: url("./assets/fonts/Nov-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Nov-SemiLightItalic";
+  src: url("./assets/fonts/Nov-SemiLightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TitleBroadOutlineMedium";
+  src: url("./assets/fonts/TitleBroadOutlineMedium.ttf") format("truetype");
+}
+
+
+
+
+/* Global App Parameters */
 .App {
-  text-align: center;
+  height: 100%
 }
 
 .App-logo {
