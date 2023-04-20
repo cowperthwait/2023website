@@ -53,6 +53,11 @@
 
 }
 
+.Page-Content-Container-3 {
+  display: flex;
+  flex-direction: column;
+}
+
 
 
 
@@ -67,7 +72,25 @@ h1 {
   margin-bottom: 0;
 }
 
+h2 {
+  font-family: Nov-Medium;
+  color: #FFFFFF;
+  margin: 0;
+}
 
+h2.italic {
+  font-family: Nov-MediumItalic;
+}
+
+p {
+  font-family: Nov-Regular;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+p.large {
+  font-size: 20px;
+}
 
 
 /* Landing Page Parameters */
@@ -75,4 +98,10 @@ h1 {
   border-radius: 50%;
   margin-left: 8vw;
   height: 160px;
+}
+
+.Subheader-Container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
 }
