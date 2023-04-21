@@ -4,17 +4,36 @@ import "./assets/fonts/Nov-MediumItalic.ttf";
 import "./assets/fonts/Nov-Regular.ttf";
 import "./assets/fonts/Nov-SemiLightItalic.ttf";
 import "./assets/fonts/TitleBroadOutlineLarge.ttf";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
 import Landing from "./pages/Landing";
 
 export default function App() {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        handleResize();
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
     return (
         <div className="App">
             <Routes>
                 <Route path="/" element={<Layout />}>
-                    <Route index element={<Landing />} />
+                    <Route
+                        index
+                        element={<Landing windowWidth={windowWidth} />}
+                    />
                 </Route>
             </Routes>
         </div>
