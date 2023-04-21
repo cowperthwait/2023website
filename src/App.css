@@ -61,8 +61,10 @@
 
 .Buttonized {
   user-select: none;
+  cursor: default;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .Buttonized:hover {
@@ -78,6 +80,7 @@
 .content.open {
   max-height: 1000px; /* or some other large value */
 }
+
 
 
 
@@ -114,6 +117,7 @@ h1 {
   font-weight: 100;
   margin-top: 0;
   margin-bottom: 0;
+  user-select: none;
 }
 
 h2 {
