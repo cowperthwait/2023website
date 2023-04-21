@@ -30,7 +30,7 @@
 /* Global App Parameters */
 .App {
   background-image: linear-gradient(35deg, #c45F33, #512B2B);
-  min-height: calc(100vh);
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
