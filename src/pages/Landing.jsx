@@ -23,13 +23,13 @@ export default function Landing(props) {
             <LandingSubheader />
             <div className="Spacer-4X" />
             <LandingWorkSection />
-            <div className="Spacer-4X" />
+            <div className="Spacer-1X" />
             <LandingCausesSection />
-            <div className="Spacer-4X" />
+            <div className="Spacer-1X" />
             <LandingEducationSection />
-            <div className="Spacer-4X" />
+            <div className="Spacer-1X" />
             <LandingCVSection />
-            <div className="Spacer-4X" />
+            <div className="Spacer-1X" />
             <LandingTalkSection />
         </div>
     );

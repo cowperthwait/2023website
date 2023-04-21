@@ -66,6 +66,7 @@ export default function LandingWorkSection() {
                             positioning, and content marketing for technology
                             and consumer brands.
                         </p>
+                        <div className="Spacer-3X" />
                     </>
                 }
             </div>
