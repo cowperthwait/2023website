@@ -3,6 +3,7 @@ import LandingSubheader from "../landing-components/LandingSubheader";
 import LandingHeadshot from "../landing-components/LandingHeadshot";
 import LandingWorkSection from "../landing-components/LandingWorkSection";
 import LandingCausesSection from "../landing-components/LandingCausesSection";
+import LandingEducationSection from "../landing-components/LandingEducationSection";
 
 export default function Landing(props) {
     return (
@@ -22,6 +23,8 @@ export default function Landing(props) {
             <LandingWorkSection />
             <div className="Spacer-4X" />
             <LandingCausesSection />
+            <div className="Spacer-4X" />
+            <LandingEducationSection />
         </div>
     );
 }
