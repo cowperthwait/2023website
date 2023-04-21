@@ -1,4 +1,6 @@
 import { useState } from "react";
+import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
 export default function LandingCVSection() {
     const [sectionOpen, setSectionOpen] = useState(false);
@@ -10,7 +12,12 @@ export default function LandingCVSection() {
     return (
         <>
             <h2 onClick={toggleSection} className="Buttonized">
-                CV »
+                CV{" "}
+                {sectionOpen ? (
+                    <KeyboardDoubleArrowDownIcon fontSize="small" />
+                ) : (
+                    <KeyboardDoubleArrowRightIcon fontSize="small" />
+                )}
             </h2>
             <div className={`content ${sectionOpen ? "open" : "closed"}`}>
                 {

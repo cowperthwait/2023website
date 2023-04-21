@@ -1,4 +1,6 @@
 import { useState } from "react";
+import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
 export default function LandingWorkSection() {
     const [sectionOpen, setSectionOpen] = useState(false);
@@ -10,7 +12,12 @@ export default function LandingWorkSection() {
     return (
         <>
             <h2 onClick={toggleSection} className="Buttonized">
-                my work »
+                my work{" "}
+                {sectionOpen ? (
+                    <KeyboardDoubleArrowDownIcon fontSize="small" />
+                ) : (
+                    <KeyboardDoubleArrowRightIcon fontSize="small" />
+                )}
             </h2>
             <div className={`content ${sectionOpen ? "open" : "closed"}`}>
                 {
