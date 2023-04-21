@@ -8,6 +8,11 @@ import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
 import Landing from "./pages/Landing";
+import ReactGA from "react-ga";
+
+const GAKey = process.env.REACT_APP_GA_TRACKINGID;
+
+ReactGA.initialize(GAKey);
 
 export default function App() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import LandingHeader from "../landing-components/LandingHeader";
 import LandingSubheader from "../landing-components/LandingSubheader";
 import LandingHeadshot from "../landing-components/LandingHeadshot";
@@ -6,8 +7,14 @@ import LandingCausesSection from "../landing-components/LandingCausesSection";
 import LandingEducationSection from "../landing-components/LandingEducationSection";
 import LandingCVSection from "../landing-components/LandingCVSection";
 import LandingTalkSection from "../landing-components/LandingTalkSection";
+import ReactGA from "react-ga";
+
 
 export default function Landing(props) {
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname);
+    }, []);
+
     return (
         <div className="Page-Content-Container-1">
             {props.windowWidth <= 740 ? (
