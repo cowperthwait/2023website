@@ -59,6 +59,16 @@
   flex-direction: column;
 }
 
+.Buttonized {
+  user-select: none;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.Buttonized:hover {
+  opacity: 0.5;
+}
+
 
 
 
