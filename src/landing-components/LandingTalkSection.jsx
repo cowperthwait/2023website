@@ -51,12 +51,12 @@ export default function LandingTalkSection() {
                         <div className="Contact-Container">
                             <MastodonIcon />
                             <p className="Buttonized">
-                            <a
+                                <a
                                     className="Buttonized"
                                     href="https://sfba.social/@cowperthwait"
                                     target="blank"
                                 >
-                                @cowperthwait@sfba.social
+                                    @cowperthwait@sfba.social
                                 </a>
                             </p>
                         </div>
