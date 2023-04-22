@@ -65,6 +65,7 @@
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
   text-decoration: none;
+  color: #FFFFFF;
 }
 
 .Buttonized:hover {
@@ -162,6 +163,22 @@ p.italic {
   display: flex;
   flex-direction: column;
   max-width: 440px;
+}
+
+.Contact-Container {
+  display: flex;
+}
+
+.Contact-Icon {
+  color: #FFFFFF;
+  height: 20px;
+  margin-right: 14px;
+}
+
+.Contact-Icon-Custom {
+  color: #FFFFFF;
+  height: 28px;
+  margin-right: 14px;
 }
 
 
