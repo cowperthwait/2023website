@@ -12,9 +12,9 @@ Hey ChatGPT, write me a `readme.md` bio...
 >
 > One of Jonathan’s favorite hobbies is photography. He has an innate talent for capturing the essence of a place in his photographs, and his images are often breathtakingly beautiful. Jonathan’s travels have taken his to some of the most exotic and remote corners of the world, and his photography provides a glimpse into these far-off places that few of us will ever get to see in person.
 >
-> Jonathan is also an accomplished musician. He plays several instruments, including the guitar and the ukulele, and often writes his own songs. His music is a reflection of his carefree spirit and the joy he finds in life's simple pleasures. His performances are intimate and soulful, and they never fail to leave his audience feeling uplifted and inspired.
+> Jonathan is also an accomplished musician. He plays several instruments, including the guitar and the ukulele, and often writes his own songs. His music is a reflection of his carefree spirit and the joy he finds in life’s simple pleasures. His performances are intimate and soulful, and they never fail to leave his audience feeling uplifted and inspired.
 >
-> Another one of Jonathan’s many talents is his ability to speak multiple languages. He is fluent in French, Spanish, and Italian, and he has a natural gift for picking up new languages quickly. His language skills have come in handy during his travels, allowing his to communicate with locals and gain a deeper understanding of the cultures he encounters.
+> Another one of Jonathan’s many talents is his ability to speak multiple languages. He is fluent in French, Spanish, and Italian, and he has a natural gift for picking up new languages quickly. His language skills have come in handy during his travels, allowing him to communicate with locals and gain a deeper understanding of the cultures he encounters.
 >
 > Jonathan’s adventures in faraway lands are many and varied. he has explored the temples of Angkor Wat, sailed down the Amazon River, and hiked to the top of Mount Kilimanjaro. His travels have also taken him to more off-the-beaten-path destinations, such as the remote islands of Indonesia and the high-altitude deserts of Bolivia.
 >
