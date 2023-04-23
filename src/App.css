@@ -162,7 +162,10 @@ p.italic {
 .Subheader-Container {
   display: flex;
   flex-direction: column;
-  max-width: 460px;
+}
+
+.Subheader-Container p {
+  max-width: 440px;
 }
 
 .Contact-Container {
