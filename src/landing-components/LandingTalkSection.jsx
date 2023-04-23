@@ -29,7 +29,16 @@ export default function LandingTalkSection() {
 
                         <div className="Contact-Container">
                             <PhoneIcon className="Contact-Icon" />
-                            <p>+1 415 366-3826</p>
+
+                            <p className="Buttonized">
+								<a
+									className="Buttonized"
+									href="tel:14153663826"
+								>
+									+1 415 366-3826
+								</a>
+							</p>
+
                         </div>
 
                         <div className="Spacer-1X" />
