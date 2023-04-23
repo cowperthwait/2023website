@@ -39,6 +39,7 @@ export default function App() {
                         index
                         element={<Landing windowWidth={windowWidth} />}
                     />
+                    <Route path="*" element={<Landing />} />
                 </Route>
             </Routes>
         </div>
