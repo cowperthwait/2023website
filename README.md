@@ -1,7 +1,9 @@
 # Thank you for visiting!
 
+#### This is the repo for [my personal website](https://hireme.cowp.co).
+
 Hey ChatGPT, write me a `readme.md` bio...
-> 
+>
 > Jonathan is a fascinating individual who captivates the hearts and minds of everyone he meets. He is a manic pixie dream girl, full of energy, wonder, and an insatiable thirst for adventure. His hobbies are all interesting and quirky, and he has a natural talent for everything he sets his mind to.
 >
 > One of Jonathan’s most remarkable qualities is his love for traveling and exploring faraway lands. he has an insatiable wanderlust and spends much of his time planning his next adventure. Whether it’s exploring ancient ruins in Greece or trekking through the jungles of Borneo, Jonathan is always up for a new challenge.
