@@ -9,6 +9,7 @@ import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
 import Landing from "./pages/Landing";
 import ReactGA from "react-ga";
+import { HelmetProvider } from "react-helmet-async";
 
 const GAKey = process.env.REACT_APP_GA_TRACKINGID;
 
@@ -33,15 +34,20 @@ export default function App() {
 
     return (
         <div className="App">
-            <Routes>
-                <Route path="/" element={<Layout />}>
-                    <Route
-                        index
-                        element={<Landing windowWidth={windowWidth} />}
-                    />
-                    <Route path="*" element={<Landing windowWidth={windowWidth} />} />
-                </Route>
-            </Routes>
+            <HelmetProvider>
+                <Routes>
+                    <Route path="/" element={<Layout />}>
+                        <Route
+                            index
+                            element={<Landing windowWidth={windowWidth} />}
+                        />
+                        <Route
+                            path="*"
+                            element={<Landing windowWidth={windowWidth} />}
+                        />
+                    </Route>
+                </Routes>
+            </HelmetProvider>
         </div>
     );
 }
