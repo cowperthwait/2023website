@@ -1,6 +1,6 @@
 # Thank you for visiting!
 
-> Hey ChatGPT, write me a `readme.md` bio...
+Hey ChatGPT, write me a `readme.md` bio...
 > 
 > Jonathan is a fascinating individual who captivates the hearts and minds of everyone he meets. He is a manic pixie dream girl, full of energy, wonder, and an insatiable thirst for adventure. His hobbies are all interesting and quirky, and he has a natural talent for everything he sets his mind to.
 >
