@@ -10,7 +10,7 @@ import Layout from "./Layout";
 import Landing from "./pages/Landing";
 import ReactGA from "react-ga";
 import { HelmetProvider } from "react-helmet-async";
-import CMSClient from "./CMS-API";
+import CMSClient from "./universal-components/CMS-API";
 
 const GAKey = process.env.REACT_APP_GA_TRACKINGID;
 
