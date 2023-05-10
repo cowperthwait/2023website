@@ -19,6 +19,8 @@ ReactGA.initialize(GAKey);
 export default function App() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [resumeJobs, setResumeJobs] = useState([]);
+    const [resumeCauses, setResumeCauses] = useState([]);
+    const [resumeEducation, setResumeEducation] = useState([]);
 
     useEffect(() => {
         const handleResize = () => {
@@ -36,16 +38,52 @@ export default function App() {
 
     useEffect(() => {
         const fetchResumeJobs = async () => {
+            const query = '*[_type == "resume"][0].jobs';
+            console.log("fetching jobs");
             try {
-                const query = '*[_type == "resume"][0].jobs'; // Query to fetch all jobs
                 const result = await CMSClient.fetch(query);
                 setResumeJobs(result);
+                console.log("Jobs Fetched");
             } catch (error) {
                 console.error("Error fetching resume jobs:", error);
             }
         };
 
-        fetchResumeJobs();
+        const fetchResumeCauses = async () => {
+            const query = '*[_type == "resume"][0].causes';
+            console.log("fetching causes");
+            try {
+                const result = await CMSClient.fetch(query);
+                setResumeCauses(result);
+                console.log("Causes fetched");
+            } catch (error) {
+                console.error("Error fetching resume causes:", error);
+            }
+        };
+
+        const fetchResumeEducation = async () => {
+            const query = '*[_type == "resume"][0].education';
+            console.log("fetching education");
+            try {
+                const result = await CMSClient.fetch(query);
+                setResumeEducation(result);
+                console.log("Education fetched");
+            } catch (error) {
+                console.error("Error fetching resume education:", error);
+            }
+        };
+
+        Promise.all([
+            fetchResumeJobs(),
+            fetchResumeCauses(),
+            fetchResumeEducation(),
+        ])
+            .then(() => {
+                console.log("All fetches completed");
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+            });
     }, []);
 
     return (
@@ -59,6 +97,8 @@ export default function App() {
                                 <Landing
                                     windowWidth={windowWidth}
                                     resumeJobs={resumeJobs}
+                                    resumeCauses={resumeCauses}
+                                    resumeEducation={resumeEducation}
                                 />
                             }
                         />
@@ -68,6 +108,8 @@ export default function App() {
                                 <Landing
                                     windowWidth={windowWidth}
                                     resumeJobs={resumeJobs}
+                                    resumeCauses={resumeCauses}
+                                    resumeEducation={resumeEducation}
                                 />
                             }
                         />
