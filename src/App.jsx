@@ -10,6 +10,7 @@ import Layout from "./Layout";
 import Landing from "./pages/Landing";
 import ReactGA from "react-ga";
 import { HelmetProvider } from "react-helmet-async";
+import CMSClient from "./CMS-API";
 
 const GAKey = process.env.REACT_APP_GA_TRACKINGID;
 
@@ -17,6 +18,7 @@ ReactGA.initialize(GAKey);
 
 export default function App() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [resumeJobs, setResumeJobs] = useState([]);
 
     useEffect(() => {
         const handleResize = () => {
@@ -32,6 +34,20 @@ export default function App() {
         };
     }, []);
 
+    useEffect(() => {
+        const fetchResumeJobs = async () => {
+            try {
+                const query = '*[_type == "resume"][0].jobs'; // Query to fetch all jobs
+                const result = await CMSClient.fetch(query);
+                setResumeJobs(result);
+            } catch (error) {
+                console.error("Error fetching resume jobs:", error);
+            }
+        };
+
+        fetchResumeJobs();
+    }, []);
+
     return (
         <div className="App">
             <HelmetProvider>
@@ -39,11 +55,21 @@ export default function App() {
                     <Route path="/" element={<Layout />}>
                         <Route
                             index
-                            element={<Landing windowWidth={windowWidth} />}
+                            element={
+                                <Landing
+                                    windowWidth={windowWidth}
+                                    resumeJobs={resumeJobs}
+                                />
+                            }
                         />
                         <Route
                             path="*"
-                            element={<Landing windowWidth={windowWidth} />}
+                            element={
+                                <Landing
+                                    windowWidth={windowWidth}
+                                    resumeJobs={resumeJobs}
+                                />
+                            }
                         />
                     </Route>
                 </Routes>
