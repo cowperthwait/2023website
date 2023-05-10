@@ -32,19 +32,17 @@ export default function LandingEducationSection(props) {
                 )}
             </h2>
             <div className={`content ${sectionOpen ? "open" : "closed"}`}>
-                {
-                    <>
-                        {props.props.resumeEducation.map((education) => (
-                            <Education
-                                key={education._key}
-                                institution={education.institution}
-                                location={education.location}
-                                description={education.description}
-                            />
-                        ))}
-                        <div className="Spacer-3X" />
-                    </>
-                }
+                <>
+                    {props.props.resumeEducation.map((education) => (
+                        <Education
+                            key={education._key}
+                            institution={education.institution}
+                            location={education.location}
+                            description={education.description}
+                        />
+                    ))}
+                    <div className="Spacer-3X" />
+                </>
             </div>
         </>
     );

@@ -32,23 +32,21 @@ export default function LandingCausesSection(props) {
                 )}
             </h2>
             <div className={`content ${sectionOpen ? "open" : "closed"}`}>
-                {
-                    <>
-                        {props.props.resumeCauses.map((cause) => (
-                            <Cause
-                                key={
-                                    cause._key && typeof cause._key === "string"
-                                        ? cause._key
-                                        : ""
-                                }
-                                orgName={cause.organization}
-                                location={cause.location}
-                                description={cause.description}
-                            />
-                        ))}
-                        <div className="Spacer-3X" />
-                    </>
-                }
+                <>
+                    {props.props.resumeCauses.map((cause) => (
+                        <Cause
+                            key={
+                                cause._key && typeof cause._key === "string"
+                                    ? cause._key
+                                    : ""
+                            }
+                            orgName={cause.organization}
+                            location={cause.location}
+                            description={cause.description}
+                        />
+                    ))}
+                    <div className="Spacer-3X" />
+                </>
             </div>
         </>
     );

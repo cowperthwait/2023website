@@ -32,23 +32,21 @@ export default function LandingWorkSection(props) {
                 )}
             </h2>
             <div className={`content ${sectionOpen ? "open" : "closed"}`}>
-                {
-                    <>
-                        {props.props.resumeJobs.map((job) => (
-                            <Job
-                                key={
-                                    job._key && typeof job._key === "string"
-                                        ? job._key
-                                        : ""
-                                }
-                                companyName={job.company}
-                                location={job.location}
-                                description={job.description}
-                            />
-                        ))}
-                        <div className="Spacer-3X" />
-                    </>
-                }
+                <>
+                    {props.props.resumeJobs.map((job) => (
+                        <Job
+                            key={
+                                job._key && typeof job._key === "string"
+                                    ? job._key
+                                    : ""
+                            }
+                            companyName={job.company}
+                            location={job.location}
+                            description={job.description}
+                        />
+                    ))}
+                    <div className="Spacer-3X" />
+                </>
             </div>
         </>
     );
