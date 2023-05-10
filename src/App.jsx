@@ -22,6 +22,7 @@ export default function App() {
     const [resumeCauses, setResumeCauses] = useState([]);
     const [resumeEducation, setResumeEducation] = useState([]);
     const [contactInformation, setContactInformation] = useState({});
+    const [resumePDFLink, setResumePDFLink] = useState("");
 
     useEffect(() => {
         const handleResize = () => {
@@ -87,11 +88,26 @@ export default function App() {
             }
         };
 
+        const fetchResumePDF = async () => {
+            const query =
+                '*[_type == "resume"][0]{"resumeURL": downloadablePDF.asset->url}';
+            console.log("fetching resume PDF link");
+            try {
+                const result = await CMSClient.fetch(query);
+                setResumePDFLink(result.resumeURL);
+                console.log("Resume PDF link fetched");
+                console.log(result.resumeURL);
+            } catch (error) {
+                console.error("Error fetching resume PDF link:", error);
+            }
+        };
+
         Promise.all([
             fetchResumeJobs(),
             fetchResumeCauses(),
             fetchResumeEducation(),
             fetchContactInfo(),
+            fetchResumePDF(),
         ])
             .then(() => {
                 console.log("All fetches completed");
@@ -115,6 +131,7 @@ export default function App() {
                                     resumeCauses={resumeCauses}
                                     resumeEducation={resumeEducation}
                                     contactInformation={contactInformation}
+                                    resumePDFLink={resumePDFLink}
                                 />
                             }
                         />
@@ -127,6 +144,7 @@ export default function App() {
                                     resumeCauses={resumeCauses}
                                     resumeEducation={resumeEducation}
                                     contactInformation={contactInformation}
+                                    resumePDFLink={resumePDFLink}
                                 />
                             }
                         />

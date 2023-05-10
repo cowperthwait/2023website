@@ -1,10 +1,10 @@
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
-export default function LandingCVSection() {
+export default function LandingCVSection(props) {
     return (
         <>
             <a
-                href={`${process.env.PUBLIC_URL}/downloadablefiles/Jonathan E Cowperthwait spring 2023 CV.pdf`}
+                href={props.props.resumePDFLink}
                 download="Jonathan E Cowperthwait spring 2023 CV.pdf"
                 className="Buttonized"
             >
