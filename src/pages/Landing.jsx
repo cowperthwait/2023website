@@ -38,13 +38,13 @@ export default function Landing(props) {
                 <div className="Spacer-4X" />
                 <LandingWorkSection props={props} />
                 <div className="Spacer-1X" />
-                <LandingCausesSection />
+                <LandingCausesSection props={props} />
                 <div className="Spacer-1X" />
-                <LandingEducationSection />
+                <LandingEducationSection props={props} />
                 <div className="Spacer-1X" />
-                <LandingCVSection />
+                <LandingCVSection props={props} />
                 <div className="Spacer-1X" />
-                <LandingTalkSection />
+                <LandingTalkSection props={props} />
             </div>
         </>
     );
