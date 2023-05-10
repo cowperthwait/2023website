@@ -18,6 +18,7 @@ ReactGA.initialize(GAKey);
 
 export default function App() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [aboutInfo, setAboutInfo] = useState({});
     const [resumeJobs, setResumeJobs] = useState([]);
     const [resumeCauses, setResumeCauses] = useState([]);
     const [resumeEducation, setResumeEducation] = useState([]);
@@ -39,6 +40,18 @@ export default function App() {
     }, []);
 
     useEffect(() => {
+        const fetchAboutInfo = async () => {
+            const query = '*[_type == "about"][0]{about, tagline}';
+            console.log("fetching about info");
+            try {
+                const result = await CMSClient.fetch(query);
+                setAboutInfo(result);
+                console.log("About info fetched");
+            } catch (error) {
+                console.error("Error fetching about info:", error);
+            }
+        };
+
         const fetchResumeJobs = async () => {
             const query = '*[_type == "resume"][0].jobs';
             console.log("fetching jobs");
@@ -96,13 +109,13 @@ export default function App() {
                 const result = await CMSClient.fetch(query);
                 setResumePDFLink(result.resumeURL);
                 console.log("Resume PDF link fetched");
-                console.log(result.resumeURL);
             } catch (error) {
                 console.error("Error fetching resume PDF link:", error);
             }
         };
 
         Promise.all([
+            fetchAboutInfo(),
             fetchResumeJobs(),
             fetchResumeCauses(),
             fetchResumeEducation(),
@@ -127,6 +140,7 @@ export default function App() {
                             element={
                                 <Landing
                                     windowWidth={windowWidth}
+                                    aboutInfo={aboutInfo}
                                     resumeJobs={resumeJobs}
                                     resumeCauses={resumeCauses}
                                     resumeEducation={resumeEducation}
@@ -140,6 +154,7 @@ export default function App() {
                             element={
                                 <Landing
                                     windowWidth={windowWidth}
+                                    aboutInfo={aboutInfo}
                                     resumeJobs={resumeJobs}
                                     resumeCauses={resumeCauses}
                                     resumeEducation={resumeEducation}

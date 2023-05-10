@@ -34,7 +34,7 @@ export default function Landing(props) {
                 )}
                 <LandingHeader windowWidth={props.windowWidth} />
                 <div className="Spacer-2X" />
-                <LandingSubheader />
+                <LandingSubheader props={props} />
                 <div className="Spacer-4X" />
                 <LandingWorkSection props={props} />
                 <div className="Spacer-1X" />
