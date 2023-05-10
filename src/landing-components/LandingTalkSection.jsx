@@ -5,11 +5,11 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import MastodonIcon from "../assets/customicons/MastodonIcon";
 
-export default function LandingTalkSection() {
+export default function LandingTalkSection(props) {
     const [sectionOpen, setSectionOpen] = useState(false);
 
     const toggleSection = () => {
-        sectionOpen ? setSectionOpen(false) : setSectionOpen(true);
+        setSectionOpen(!sectionOpen);
     };
 
     return (
@@ -23,56 +23,53 @@ export default function LandingTalkSection() {
                 )}
             </h2>
             <div className={`content ${sectionOpen ? "open" : "closed"}`}>
-                {
-                    <>
-                        <div className="Spacer-2X" />
+                <>
+                    <div className="Spacer-2X" />
+                    <div className="Contact-Container">
+                        <PhoneIcon className="Contact-Icon" />
+                        <p className="Buttonized">
+                            <a
+                                className="Buttonized"
+                                href={`tel:${props.props.contactInformation.phone}`}
+                            >
+                                {props.props.contactInformation.phone}
+                            </a>
+                        </p>
+                    </div>
 
-                        <div className="Contact-Container">
-                            <PhoneIcon className="Contact-Icon" />
+                    <div className="Spacer-1X" />
 
-                            <p className="Buttonized">
-								<a
-									className="Buttonized"
-									href="tel:14153663826"
-								>
-									+1 415 366-3826
-								</a>
-							</p>
+                    <div className="Contact-Container">
+                        <EmailIcon className="Contact-Icon" />
+                        <p className="Buttonized">
+                            <a
+                                className="Buttonized"
+                                href={`mailto:${props.props.contactInformation.email}`}
+                            >
+                                {props.props.contactInformation.email}
+                            </a>
+                        </p>
+                    </div>
 
-                        </div>
+                    <div className="Spacer-1X" />
 
-                        <div className="Spacer-1X" />
+                    <div className="Contact-Container">
+                        <MastodonIcon />
+                        <p className="Buttonized">
+                            <a
+                                className="Buttonized"
+                                href={
+                                    props.props.contactInformation.mastodonURL
+                                }
+                                target="blank"
+                            >
+                                {props.props.contactInformation.mastodonHandle}
+                            </a>
+                        </p>
+                    </div>
 
-                        <div className="Contact-Container">
-                            <EmailIcon className="Contact-Icon" />
-                            <p className="Buttonized">
-                                <a
-                                    className="Buttonized"
-                                    href="mailto:j@cowp.co"
-                                >
-                                    j@cowp.co
-                                </a>
-                            </p>
-                        </div>
-
-                        <div className="Spacer-1X" />
-
-                        <div className="Contact-Container">
-                            <MastodonIcon />
-                            <p className="Buttonized">
-                                <a
-                                    className="Buttonized"
-                                    href="https://sfba.social/@cowperthwait"
-                                    target="blank"
-                                >
-                                    @cowperthwait@sfba.social
-                                </a>
-                            </p>
-                        </div>
-
-                        <div className="Spacer-3X" />
-                    </>
-                }
+                    <div className="Spacer-3X" />
+                </>
             </div>
         </>
     );

@@ -21,6 +21,7 @@ export default function App() {
     const [resumeJobs, setResumeJobs] = useState([]);
     const [resumeCauses, setResumeCauses] = useState([]);
     const [resumeEducation, setResumeEducation] = useState([]);
+    const [contactInformation, setContactInformation] = useState({});
 
     useEffect(() => {
         const handleResize = () => {
@@ -73,10 +74,24 @@ export default function App() {
             }
         };
 
+        const fetchContactInfo = async () => {
+            const query =
+                '*[_type == "contact"][0] {phone, email, mastodonHandle, mastodonURL}';
+            console.log("fetching education");
+            try {
+                const result = await CMSClient.fetch(query);
+                setContactInformation(result);
+                console.log("Contact information fetched");
+            } catch (error) {
+                console.error("Error fetching contact information:", error);
+            }
+        };
+
         Promise.all([
             fetchResumeJobs(),
             fetchResumeCauses(),
             fetchResumeEducation(),
+            fetchContactInfo(),
         ])
             .then(() => {
                 console.log("All fetches completed");
@@ -99,6 +114,7 @@ export default function App() {
                                     resumeJobs={resumeJobs}
                                     resumeCauses={resumeCauses}
                                     resumeEducation={resumeEducation}
+                                    contactInformation={contactInformation}
                                 />
                             }
                         />
@@ -110,6 +126,7 @@ export default function App() {
                                     resumeJobs={resumeJobs}
                                     resumeCauses={resumeCauses}
                                     resumeEducation={resumeEducation}
+                                    contactInformation={contactInformation}
                                 />
                             }
                         />
