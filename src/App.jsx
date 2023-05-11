@@ -18,6 +18,7 @@ ReactGA.initialize(GAKey);
 
 export default function App() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [dataLoaded, setDataLoaded] = useState(false);
     const [aboutInfo, setAboutInfo] = useState({});
     const [resumeJobs, setResumeJobs] = useState([]);
     const [resumeCauses, setResumeCauses] = useState([]);
@@ -41,12 +42,11 @@ export default function App() {
 
     useEffect(() => {
         const fetchAboutInfo = async () => {
-            const query = '*[_type == "about"][0]{about, tagline}';
-            console.log("fetching about info");
+            const query =
+                '*[_type == "about"][0]{about, tagline, "avatarImageURL": avatarImage.asset->url, "avatarImageAlt": avatarImage.altText}';
             try {
                 const result = await CMSClient.fetch(query);
                 setAboutInfo(result);
-                console.log("About info fetched");
             } catch (error) {
                 console.error("Error fetching about info:", error);
             }
@@ -54,11 +54,9 @@ export default function App() {
 
         const fetchResumeJobs = async () => {
             const query = '*[_type == "resume"][0].jobs';
-            console.log("fetching jobs");
             try {
                 const result = await CMSClient.fetch(query);
                 setResumeJobs(result);
-                console.log("Jobs Fetched");
             } catch (error) {
                 console.error("Error fetching resume jobs:", error);
             }
@@ -66,11 +64,9 @@ export default function App() {
 
         const fetchResumeCauses = async () => {
             const query = '*[_type == "resume"][0].causes';
-            console.log("fetching causes");
             try {
                 const result = await CMSClient.fetch(query);
                 setResumeCauses(result);
-                console.log("Causes fetched");
             } catch (error) {
                 console.error("Error fetching resume causes:", error);
             }
@@ -78,11 +74,9 @@ export default function App() {
 
         const fetchResumeEducation = async () => {
             const query = '*[_type == "resume"][0].education';
-            console.log("fetching education");
             try {
                 const result = await CMSClient.fetch(query);
                 setResumeEducation(result);
-                console.log("Education fetched");
             } catch (error) {
                 console.error("Error fetching resume education:", error);
             }
@@ -91,11 +85,9 @@ export default function App() {
         const fetchContactInfo = async () => {
             const query =
                 '*[_type == "contact"][0] {phone, email, mastodonHandle, mastodonURL}';
-            console.log("fetching education");
             try {
                 const result = await CMSClient.fetch(query);
                 setContactInformation(result);
-                console.log("Contact information fetched");
             } catch (error) {
                 console.error("Error fetching contact information:", error);
             }
@@ -104,11 +96,9 @@ export default function App() {
         const fetchResumePDF = async () => {
             const query =
                 '*[_type == "resume"][0]{"resumeURL": downloadablePDF.asset->url}';
-            console.log("fetching resume PDF link");
             try {
                 const result = await CMSClient.fetch(query);
                 setResumePDFLink(result.resumeURL);
-                console.log("Resume PDF link fetched");
             } catch (error) {
                 console.error("Error fetching resume PDF link:", error);
             }
@@ -123,7 +113,7 @@ export default function App() {
             fetchResumePDF(),
         ])
             .then(() => {
-                console.log("All fetches completed");
+                setDataLoaded(true);
             })
             .catch((error) => {
                 console.error("Error fetching data:", error);
@@ -131,7 +121,7 @@ export default function App() {
     }, []);
 
     return (
-        <div className="App">
+        <div className={`App fade-in ${dataLoaded ? "active" : ""}`}>
             <HelmetProvider>
                 <Routes>
                     <Route path="/" element={<Layout />}>

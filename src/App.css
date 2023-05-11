@@ -36,6 +36,15 @@
   justify-content: center;
 }
 
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+
+.fade-in.active {
+  opacity: 1;
+}
+
 .Page-Content-Container-1 {
   max-width: 1100px;
   margin-top: 6vh;
