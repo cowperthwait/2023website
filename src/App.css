@@ -102,6 +102,13 @@
   max-height: 1000px; /* or some other large value */
 }
 
+@media (min-width: 900px) {
+  .Page-Content-Container-1 {
+    margin-left: 3vw;
+    margin-right: 3vw;
+  }
+}
+
 
 
 
