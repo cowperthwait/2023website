@@ -3,15 +3,17 @@ import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArro
 export default function LandingCVSection(props) {
     return (
         <>
-            <a
-                href={props.props.resumePDFLink}
-                download="Jonathan E Cowperthwait spring 2023 CV.pdf"
-                className="Buttonized"
-            >
-                <h2 className="Buttonized">
-                    CV <KeyboardDoubleArrowRightIcon fontSize="small" />
-                </h2>
-            </a>
+            <h2>
+                <a
+                    href={props.props.resumePDFLink}
+                    download="Jonathan E Cowperthwait spring 2023 CV.pdf"
+                    className="Buttonized"
+                >
+                    <span className="Buttonized">
+                        CV <KeyboardDoubleArrowRightIcon fontSize="small" />
+                    </span>
+                </a>
+            </h2>
         </>
     );
 }

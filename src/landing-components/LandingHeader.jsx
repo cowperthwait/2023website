@@ -13,7 +13,10 @@ export default function LandingHeader(props) {
             ) : (
                 <div className="Page-Content-Container-2">
                     <LandingTitleName />
+                    <div className="Avatar-Right">
+
                     <LandingHeadshot props={props} />
+                    </div>
                 </div>
             )}
         </>

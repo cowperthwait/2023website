@@ -23,13 +23,15 @@ export default function LandingEducationSection(props) {
 
     return (
         <>
-            <h2 onClick={toggleSection} className="Buttonized">
-                education{" "}
-                {sectionOpen ? (
-                    <KeyboardDoubleArrowDownIcon fontSize="small" />
-                ) : (
-                    <KeyboardDoubleArrowRightIcon fontSize="small" />
-                )}
+            <h2>
+                <span onClick={toggleSection} className="Buttonized">
+                    education{" "}
+                    {sectionOpen ? (
+                        <KeyboardDoubleArrowDownIcon fontSize="small" />
+                    ) : (
+                        <KeyboardDoubleArrowRightIcon fontSize="small" />
+                    )}
+                </span>
             </h2>
             <div className={`content ${sectionOpen ? "open" : "closed"}`}>
                 <>

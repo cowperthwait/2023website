@@ -14,13 +14,15 @@ export default function LandingTalkSection(props) {
 
     return (
         <>
-            <h2 onClick={toggleSection} className="Buttonized">
-                let’s talk{" "}
-                {sectionOpen ? (
-                    <KeyboardDoubleArrowDownIcon fontSize="small" />
-                ) : (
-                    <KeyboardDoubleArrowRightIcon fontSize="small" />
-                )}
+            <h2>
+                <span onClick={toggleSection} className="Buttonized">
+                    let’s talk{" "}
+                    {sectionOpen ? (
+                        <KeyboardDoubleArrowDownIcon fontSize="small" />
+                    ) : (
+                        <KeyboardDoubleArrowRightIcon fontSize="small" />
+                    )}
+                </span>
             </h2>
             <div className={`content ${sectionOpen ? "open" : "closed"}`}>
                 <>
