@@ -40,86 +40,6 @@ export default function App() {
         };
     }, []);
 
-    // useEffect(() => {
-    //     const fetchAboutInfo = async () => {
-    //         const query =
-    //             '*[_type == "about"][0]{about, tagline, "avatarImageURL": avatarImage.asset->url, "avatarImageAlt": avatarImage.altText}';
-    //         try {
-    //             const result = await CMSClient.fetch(query);
-    //             setAboutInfo(result);
-    //         } catch (error) {
-    //             console.error("Error fetching about info:", error);
-    //         }
-    //     };
-
-    //     const fetchResumeJobs = async () => {
-    //         const query = '*[_type == "resume"][0].jobs';
-    //         try {
-    //             const result = await CMSClient.fetch(query);
-    //             setResumeJobs(result);
-    //         } catch (error) {
-    //             console.error("Error fetching resume jobs:", error);
-    //         }
-    //     };
-
-    //     const fetchResumeCauses = async () => {
-    //         const query = '*[_type == "resume"][0].causes';
-    //         try {
-    //             const result = await CMSClient.fetch(query);
-    //             setResumeCauses(result);
-    //         } catch (error) {
-    //             console.error("Error fetching resume causes:", error);
-    //         }
-    //     };
-
-    //     const fetchResumeEducation = async () => {
-    //         const query = '*[_type == "resume"][0].education';
-    //         try {
-    //             const result = await CMSClient.fetch(query);
-    //             setResumeEducation(result);
-    //         } catch (error) {
-    //             console.error("Error fetching resume education:", error);
-    //         }
-    //     };
-
-    //     const fetchContactInfo = async () => {
-    //         const query =
-    //             '*[_type == "contact"][0] {phone, email, mastodonHandle, mastodonURL}';
-    //         try {
-    //             const result = await CMSClient.fetch(query);
-    //             setContactInformation(result);
-    //         } catch (error) {
-    //             console.error("Error fetching contact information:", error);
-    //         }
-    //     };
-
-    //     const fetchResumePDF = async () => {
-    //         const query =
-    //             '*[_type == "resume"][0]{"resumeURL": downloadablePDF.asset->url}';
-    //         try {
-    //             const result = await CMSClient.fetch(query);
-    //             setResumePDFLink(result.resumeURL);
-    //         } catch (error) {
-    //             console.error("Error fetching resume PDF link:", error);
-    //         }
-    //     };
-
-    //     Promise.all([
-    //         fetchAboutInfo(),
-    //         fetchResumeJobs(),
-    //         fetchResumeCauses(),
-    //         fetchResumeEducation(),
-    //         fetchContactInfo(),
-    //         fetchResumePDF(),
-    //     ])
-    //         .then(() => {
-    //             setDataLoaded(true);
-    //         })
-    //         .catch((error) => {
-    //             console.error("Error fetching data:", error);
-    //         });
-    // }, []);
-
     useEffect(() => {
         const fetchData = async () => {
             const query = `
@@ -150,41 +70,43 @@ export default function App() {
     }, []);
 
     return (
-        <div className={`App fade-in ${dataLoaded ? "active" : ""}`}>
-            <HelmetProvider>
-                <Routes>
-                    <Route path="/" element={<Layout />}>
-                        <Route
-                            index
-                            element={
-                                <Landing
-                                    windowWidth={windowWidth}
-                                    aboutInfo={aboutInfo}
-                                    resumeJobs={resumeJobs}
-                                    resumeCauses={resumeCauses}
-                                    resumeEducation={resumeEducation}
-                                    contactInformation={contactInformation}
-                                    resumePDFLink={resumePDFLink}
-                                />
-                            }
-                        />
-                        <Route
-                            path="*"
-                            element={
-                                <Landing
-                                    windowWidth={windowWidth}
-                                    aboutInfo={aboutInfo}
-                                    resumeJobs={resumeJobs}
-                                    resumeCauses={resumeCauses}
-                                    resumeEducation={resumeEducation}
-                                    contactInformation={contactInformation}
-                                    resumePDFLink={resumePDFLink}
-                                />
-                            }
-                        />
-                    </Route>
-                </Routes>
-            </HelmetProvider>
+        <div className="App-Background">
+            <div className={`App fade-in ${dataLoaded ? "active" : ""}`}>
+                <HelmetProvider>
+                    <Routes>
+                        <Route path="/" element={<Layout />}>
+                            <Route
+                                index
+                                element={
+                                    <Landing
+                                        windowWidth={windowWidth}
+                                        aboutInfo={aboutInfo}
+                                        resumeJobs={resumeJobs}
+                                        resumeCauses={resumeCauses}
+                                        resumeEducation={resumeEducation}
+                                        contactInformation={contactInformation}
+                                        resumePDFLink={resumePDFLink}
+                                    />
+                                }
+                            />
+                            <Route
+                                path="*"
+                                element={
+                                    <Landing
+                                        windowWidth={windowWidth}
+                                        aboutInfo={aboutInfo}
+                                        resumeJobs={resumeJobs}
+                                        resumeCauses={resumeCauses}
+                                        resumeEducation={resumeEducation}
+                                        contactInformation={contactInformation}
+                                        resumePDFLink={resumePDFLink}
+                                    />
+                                }
+                            />
+                        </Route>
+                    </Routes>
+                </HelmetProvider>
+            </div>
         </div>
     );
 }

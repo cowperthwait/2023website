@@ -29,7 +29,6 @@
 
 /* Global App Parameters */
 .App {
-  background-image: linear-gradient(35deg, #c45F33, #512B2B);
   min-height: 100vh;
   width: 100vw;
   display: flex;
@@ -43,6 +42,10 @@
 
 .fade-in.active {
   opacity: 1;
+}
+
+.App-Background {
+  background-image: linear-gradient(35deg, #c45F33, #512B2B);
 }
 
 .Page-Content-Container-1 {
