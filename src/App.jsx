@@ -70,7 +70,8 @@ export default function App() {
     }, []);
 
     return (
-        <div className="App-Background">
+        <>
+            <div className="App-Background" />
             <div className={`App fade-in ${dataLoaded ? "active" : ""}`}>
                 <HelmetProvider>
                     <Routes>
@@ -107,6 +108,6 @@ export default function App() {
                     </Routes>
                 </HelmetProvider>
             </div>
-        </div>
+        </>
     );
 }
