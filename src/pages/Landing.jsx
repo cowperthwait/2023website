@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import SEO from "../universal-components/SEO";
 import LandingHeader from "../landing-components/LandingHeader";
 import LandingSubheader from "../landing-components/LandingSubheader";
-import LandingHeadshot from "../landing-components/LandingHeadshot";
 import LandingWorkSection from "../landing-components/LandingWorkSection";
 import LandingCausesSection from "../landing-components/LandingCausesSection";
 import LandingEducationSection from "../landing-components/LandingEducationSection";
@@ -24,27 +23,19 @@ export default function Landing(props) {
                 type="website"
             />
             <div className="Page-Content-Container-1">
-                {props.windowWidth <= 740 ? (
-                    <div>
-                        <LandingHeadshot />
-                        <div className="Spacer-1X" />
-                    </div>
-                ) : (
-                    <></>
-                )}
-                <LandingHeader windowWidth={props.windowWidth} />
+                <LandingHeader props={props} />
                 <div className="Spacer-2X" />
-                <LandingSubheader />
+                <LandingSubheader props={props} />
                 <div className="Spacer-4X" />
-                <LandingWorkSection />
+                <LandingWorkSection props={props} />
                 <div className="Spacer-1X" />
-                <LandingCausesSection />
+                <LandingCausesSection props={props} />
                 <div className="Spacer-1X" />
-                <LandingEducationSection />
+                <LandingEducationSection props={props} />
                 <div className="Spacer-1X" />
-                <LandingCVSection />
+                <LandingCVSection props={props} />
                 <div className="Spacer-1X" />
-                <LandingTalkSection />
+                <LandingTalkSection props={props} />
             </div>
         </>
     );

@@ -1,10 +1,10 @@
-export default function LandingHeadshot() {
+export default function LandingHeadshot(props) {
     return (
         <>
             <img
                 className="Avatar-Image"
-                src={`${process.env.PUBLIC_URL}/images/landing/JEC-Headshot.png`}
-                alt="Jonathan Cowperthwait"
+                src={props.props.props.aboutInfo.avatarImageURL}
+                alt={props.props.props.aboutInfo.avatarImageAlt}
             />
         </>
     );
