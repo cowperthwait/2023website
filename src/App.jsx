@@ -8,7 +8,7 @@ import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
 import Landing from "./pages/Landing";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import { HelmetProvider } from "react-helmet-async";
 import CMSClient from "./universal-components/CMS-API";
 

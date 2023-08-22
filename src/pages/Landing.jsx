@@ -7,7 +7,7 @@ import LandingCausesSection from "../landing-components/LandingCausesSection";
 import LandingEducationSection from "../landing-components/LandingEducationSection";
 import LandingCVSection from "../landing-components/LandingCVSection";
 import LandingTalkSection from "../landing-components/LandingTalkSection";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 export default function Landing(props) {
     useEffect(() => {
